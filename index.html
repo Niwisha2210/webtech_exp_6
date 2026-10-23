@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>YummyBites | Recipes Made with Love</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <a href="#home" class="logo">
+            <span class="logo-icon">♥</span> YummyBites
+        </a>
+
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#recipes">Recipes</a>
+            <a href="#about">Our Story</a>
+            <a href="#add-recipe" class="nav-button">Share a Recipe ↗</a>
+        </nav>
+    </header>
+
+
+    <!-- Hero Section -->
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+                <span class="eyebrow">A PINCH OF LOVE, A DASH OF MAGIC</span>
+
+                <h1>
+                    Good food.<br>
+                    <span>Happy hearts.</span>
+                </h1>
+
+                <p>
+                    Discover delicious recipes, save your favourites,
+                    and bring a little extra joy to your kitchen.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#recipes" class="primary-button">
+                        Explore Recipes →
+                    </a>
+
+                    <a href="#about" class="secondary-button">
+                        Our little story
+                    </a>
+                </div>
+
+                <div class="hero-note">
+                    <span class="heart">♥</span>
+                    Made with love, shared with everyone.
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-image">
+                    <img
+                        src="C:\Users\USER\OneDrive\Desktop\web tech lab\exp 6\strawberry cake.png"
+                        alt="A colourful table of fresh food">
+
+                    <div class="image-label">
+                        <span>✿</span>
+                        <div>
+                            <strong>Freshly picked</strong>
+                            <small>Recipes you'll love</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="decor decor-one">✿</div>
+                <div class="decor decor-two">♡</div>
+                <div class="decor decor-three">✦</div>
+            </div>
+
+        </section>
+
+
+        <!-- Recipe Collection -->
+        <section class="recipes-section" id="recipes">
+
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">FROM OUR KITCHEN</span>
+                    <h2>A little taste of <span>happiness.</span></h2>
+                    <p>Find your next favourite dish, one recipe at a time.</p>
+                </div>
+
+                <div class="recipe-count">
+                    <span id="recipeCount">0</span>
+                    <small>recipes to explore</small>
+                </div>
+            </div>
+
+
+            <!-- Search and filter -->
+            <div class="recipe-toolbar">
+
+                <div class="search-box">
+                    <span>⌕</span>
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Find something delicious..."
+                        aria-label="Search recipes">
+                </div>
+
+                <div class="filter-buttons">
+                    <button class="filter-button active"
+                            type="button" data-filter="all">
+                        All recipes
+                    </button>
+
+                    <button class="filter-button"
+                            type="button" data-filter="favourites">
+                        ♥ Favourites
+                    </button>
+                </div>
+
+            </div>
+
+
+            <!-- JavaScript inserts recipe cards here -->
+            <div class="recipe-grid" id="recipeGrid"></div>
+
+            <div class="empty-state" id="emptyState" hidden>
+                <div class="empty-emoji">🍓</div>
+                <h3>No recipes found</h3>
+                <p>Try another search or add a delicious recipe of your own.</p>
+            </div>
+
+        </section>
+
+
+        <!-- About Section -->
+        <section class="about-section" id="about">
+
+            <div class="about-image">
+                <img
+                    src="C:\Users\USER\OneDrive\Desktop\web tech lab\exp 6\steak.png"
+                    alt="A warm and welcoming home kitchen">
+                <span class="image-badge">Cook • Taste • Repeat</span>
+            </div>
+
+            <div class="about-content">
+                <span class="eyebrow">A LITTLE ABOUT US</span>
+
+                <h2>Every recipe tells a <span>story.</span></h2>
+
+                <p>
+                    YummyBites is a happy little corner for food lovers.
+                    From comforting classics to exciting new creations,
+                    every recipe brings people a little closer together.
+                </p>
+
+                <p>
+                    Found something wonderful? Add your own recipe,
+                    save the ones you love, and make this collection yours.
+                </p>
+
+                <a href="#add-recipe" class="primary-button">
+                    Share your recipe ♥
+                </a>
+            </div>
+
+        </section>
+
+
+        <!-- Add Recipe Form -->
+        <section class="add-section" id="add-recipe">
+
+            <div class="add-heading">
+                <span class="eyebrow">YOUR KITCHEN, YOUR CREATION</span>
+                <h2>Have a recipe to <span>share?</span></h2>
+                <p>
+                    Every great collection starts with one good recipe.
+                    Add yours below!
+                </p>
+            </div>
+
+            <form id="recipeForm" class="recipe-form" novalidate>
+
+                <div class="form-group">
+                    <label for="recipeName">Recipe name</label>
+                    <input
+                        type="text"
+                        id="recipeName"
+                        placeholder="e.g. Grandma's chocolate cake">
+                    <small class="error" id="nameError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="recipeCategory">Category</label>
+                    <select id="recipeCategory">
+                        <option value="">Choose a category</option>
+                        <option value="Breakfast">Breakfast</option>
+                        <option value="Lunch">Lunch</option>
+                        <option value="Dinner">Dinner</option>
+                        <option value="Dessert">Dessert</option>
+                        <option value="Snacks">Snacks</option>
+                        <option value="Drinks">Drinks</option>
+                    </select>
+                    <small class="error" id="categoryError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="recipeDescription">Short description</label>
+                    <textarea
+                        id="recipeDescription"
+                        rows="3"
+                        placeholder="What makes this recipe special?"></textarea>
+                    <small class="error" id="descriptionError"></small>
+                </div>
+
+                <button type="submit" class="primary-button submit-button">
+                    + Add to my collection
+                </button>
+
+                <p id="successMessage" class="success-message"
+                   aria-live="polite"></p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <a href="#home" class="logo">♥ YummyBites</a>
+        <p>Made with a little sugar and a lot of love.</p>
+        <a href="#home" class="back-top">Back to top ↑</a>
+    </footer>
+
+
+    <script src="app.js"></script>
+
+</body>
+</html>
